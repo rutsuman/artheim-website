@@ -10,6 +10,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.4.0/jsQR.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
 </head>
+    <style>
+    /* Emergency quest popup fix */
+    #quest-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 1000;
+        overflow: auto;
+    }
+    
+    #quest-box {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        margin: 50px auto;
+        background: #f5e9d8;
+        border: 10px solid #8B4513;
+        border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%238B4513"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23D2691E" stroke-width="2"/></svg>') 10 stretch;
+        padding: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        overflow: hidden;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+</style>
 <body>
 
 <div id="map-container">
@@ -440,4 +476,5 @@
 </div>
 <script src="script.js"></script>
 </body>
+
 </html>
