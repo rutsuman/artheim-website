@@ -1,4 +1,149 @@
 /* =======================================
+   FIX FOR GITHUB PAGES - RESPONSIVE DESIGN
+   ======================================= */
+
+/* 1. Viewport scaling fix */
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+/* 2. Base font size control */
+:root {
+  font-size: 16px;
+}
+
+/* 3. Prevent elements from becoming too large */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 4. Reset button and input sizes */
+button, input, select, textarea {
+  font-size: 1rem;
+  max-width: 100%;
+}
+
+/* 5. Fix for dropdown container */
+#dropdown-container {
+  max-width: 400px;
+  width: auto;
+}
+
+/* 6. Fix select elements */
+select {
+  font-size: 14px !important;
+  padding: 6px 8px !important;
+  height: auto !important;
+}
+
+/* 7. Fix search input */
+#quest-search {
+  font-size: 14px !important;
+  padding: 6px 8px !important;
+}
+
+/* 8. Fix buttons */
+button {
+  font-size: 14px !important;
+  padding: 8px 12px !important;
+}
+
+/* 9. Fix quest box max width */
+#quest-box {
+  width: 90vw;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+/* 10. Fix profile button size */
+.profile-btn img {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+/* 11. Fix achievements button */
+.achievements-btn {
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+}
+
+/* 12. Add responsive media queries */
+@media (max-width: 1200px) {
+  :root {
+    font-size: 15px;
+  }
+  
+  #quest-box {
+    width: 95vw;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  #dropdown-container {
+    max-width: 300px;
+    padding: 8px;
+  }
+  
+  select, #quest-search {
+    font-size: 13px !important;
+    padding: 5px 6px !important;
+  }
+  
+  button {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+  
+  .profile-btn {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .profile-btn img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .achievements-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px !important;
+  }
+  
+  #quest-box {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 8px !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+  
+  #dropdown-container {
+    max-width: 250px;
+    left: 10px;
+    top: 10px;
+  }
+  
+  #quest-search-container {
+    width: 150px !important;
+  }
+}
+
+/* =======================================
    Map Container & Image
    ======================================= */
 html, body {
@@ -1630,3 +1775,4 @@ select:focus {
 .tour-btn:active {
   transform: translateY(0);
 }
+
