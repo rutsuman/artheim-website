@@ -411,7 +411,7 @@ select:focus {
 /* Body content */
 .scroll-body {
   width: 100%;
-  max-width: 600px;
+  max-width: 70%;
   text-align: center;
   color: #000000;
   font-family: 'Georgia', serif;
@@ -420,6 +420,7 @@ select:focus {
   box-sizing: border-box;
   overflow-x: hidden;
   word-wrap: break-word;
+   
 
   /* AUTO FIT TEXT */
   font-size: clamp(16px, 2.2vw, 20px);
@@ -1637,5 +1638,6 @@ select:focus {
   transform: translateY(0);
 
 }
+
 
 
