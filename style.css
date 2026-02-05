@@ -499,6 +499,27 @@ select {
     padding: 0 20px;
     box-sizing: border-box;
 }
+/* Add this for strict text containment */
+.scroll-body * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Force all text elements to stay within bounds */
+.scroll-body h1,
+.scroll-body p,
+.scroll-body div {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Add inner container for all text */
+.text-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 }
 
 /* ==========================
@@ -1855,6 +1876,7 @@ select {
         order: 3;
     }
 }
+
 
 
 
