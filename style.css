@@ -83,7 +83,7 @@ Dropdown MENU content - MINIMAL
     border-radius: 5px;
     color: white;
     z-index: 3000;
-    max-width: 180px; /* Very compact */
+    max-width: 80px; /* Very compact */
     width: auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
@@ -1940,5 +1940,6 @@ select {
         order: 3;
     }
 }
+
 
 
