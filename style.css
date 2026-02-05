@@ -19,7 +19,7 @@ html, body {
 
 /* Map image */
 #map-image {
-    width: 100%;
+    width: 120%;
     height: auto;
     display: block;
 }
@@ -1632,3 +1632,4 @@ select:focus {
   transform: translateY(0);
 
 }
+
