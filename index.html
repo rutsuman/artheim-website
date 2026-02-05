@@ -230,24 +230,27 @@
 <!-- WELCOME OVERLAY------------------------------------------------------------------>
 <div id="welcome-overlay" class="welcome-overlay">
   <div class="welcome-scroll">
-    <div class="scroll-top"></div>
     <div class="scroll-body">
-        <h1>Welcome to Artheim</h1>
-        <p>Welcome, traveler, to Artheim — the Realm of Art, where every brushstroke is a spell and every sketch is a map to a new world.</p>
-        <p></p>
-        <p>Here, the old masters still whisper in the wind, and the elements themselves answer only to those who dare to create. You are not merely a student; you are an apprentice of the unseen, a seeker of form, color, and meaning.</p>
-        <p></p>
-        <p>Across this realm, quests await you—each one a challenge forged to sharpen your skills, deepen your vision, and awaken the artist within. From the quiet discipline of drawing to the wild alchemy of paint, from the solid truth of sculpture to the delicate flow of watercolor, you will face trials that test your patience, your imagination, and your courage.</p>
-        <p></p>
-        <p>But fear not. You will not travel alone. Guides, mentors, and the spirits of creativity will stand beside you, offering knowledge and inspiration. With every quest completed, your power grows: your hand becomes steadier, your eye becomes keener, and your voice becomes more confident.</p>
-        <p></p>
-        <p>So step forward, brave artist. The gates of Artheim are open.</p>
-        <p>Choose your path, accept your quest, and begin the journey that will transform you.</p>
-        <p></p>
-        <p>The realm awaits your masterpiece.</p>
-        <button id="welcome-close">Enter</button>
+        <!-- Add this wrapper div around all your content -->
+        <div class="text-container">
+            <h1>Welcome to Artheim</h1>
+            <p>Welcome, traveler, to Artheim — the Realm of Art, where every brushstroke is a spell and every sketch is a map to a new world.</p>
+            <p>Here, the old masters still whisper in the wind, and the elements themselves answer only to those who dare to create. You are not merely a student; you are an apprentice of the unseen, a seeker of form, color, and meaning.</p>
+            <p>Across this realm, quests await you—each one a challenge forged to sharpen your skills, deepen your vision, and awaken the artist within. From the quiet discipline of drawing to the wild alchemy of paint, from the solid truth of sculpture to the delicate flow of watercolor, you will face trials that test your patience, your imagination, and your courage.</p>
+            <p>But fear not. You will not travel alone. Guides, mentors, and the spirits of creativity will stand beside you, offering knowledge and inspiration. With every quest completed, your power grows: your hand becomes steadier, your eye becomes keener, and your voice becomes more confident.</p>
+            <p>So step forward, brave artist. The gates of Artheim are open.</p>
+            <p>Choose your path, accept your quest, and begin the journey that will transform you.</p>
+            <p>The realm awaits your masterpiece.</p>
+            
+            <!-- Character selection section - add inside text-container -->
+            <div id="characters-list" style="display: none;">
+                <!-- Characters will be added here by JavaScript -->
+            </div>
+            
+            <button id="welcome-close">Enter</button>
+        </div>
+        <!-- End of text-container -->
     </div>
-    <div class="scroll-bottom"></div>
    </div>
 </div>
 <!-- STUDENT SETUP POPUP ------------------------------------------------------------->
@@ -439,6 +442,7 @@
 </body>
 
 </html>
+
 
 
 
