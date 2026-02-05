@@ -392,7 +392,7 @@ select:focus {
 /* Scroll wrapper */
 .welcome-scroll {
   position: relative;
-  width: 85%;
+  width: 100%;
   max-width: 900px;
   height: 80vh;
   background: url('scroll.png') center/contain no-repeat;
@@ -1630,4 +1630,5 @@ select:focus {
 }
 .tour-btn:active {
   transform: translateY(0);
+
 }
