@@ -391,6 +391,7 @@ select:focus {
 }
 /* Scroll wrapper */
 .welcome-scroll {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   max-width: 900px;
@@ -403,7 +404,7 @@ select:focus {
   align-items: center;
   will-change: transform, opacity;
 
-  padding: 80px 60px;
+  padding: clamp(30px, 6vw, 80px) clamp(20px, 5vw, 60px);
   box-shadow: 0 25px 60px rgba(0,0,0,0.7);
   animation: float 5s ease-in-out infinite;
 }
@@ -415,6 +416,10 @@ select:focus {
   color: #000000;
   font-family: 'Georgia', serif;
   z-index: 2;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  word-wrap: break-word;
 
   /* AUTO FIT TEXT */
   font-size: clamp(16px, 2.2vw, 20px);
@@ -1632,4 +1637,5 @@ select:focus {
   transform: translateY(0);
 
 }
+
 
