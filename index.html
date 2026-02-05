@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Quest Map</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
 <div id="map-container">
@@ -230,29 +230,25 @@
 <!-- WELCOME OVERLAY------------------------------------------------------------------>
 <div id="welcome-overlay" class="welcome-overlay">
   <div class="welcome-scroll">
-    <!-- The scroll image as a visible element -->
-    <img src="scroll.png" class="scroll-image" alt="Scroll">
-    
-    <!-- The content container that sits ON the scroll -->
-    <div class="scroll-content">
-      <div class="scroll-body">
+    <div class="scroll-top"></div>
+    <div class="scroll-body">
         <h1>Welcome to Artheim</h1>
         <p>Welcome, traveler, to Artheim — the Realm of Art, where every brushstroke is a spell and every sketch is a map to a new world.</p>
+        <p></p>
         <p>Here, the old masters still whisper in the wind, and the elements themselves answer only to those who dare to create. You are not merely a student; you are an apprentice of the unseen, a seeker of form, color, and meaning.</p>
+        <p></p>
         <p>Across this realm, quests await you—each one a challenge forged to sharpen your skills, deepen your vision, and awaken the artist within. From the quiet discipline of drawing to the wild alchemy of paint, from the solid truth of sculpture to the delicate flow of watercolor, you will face trials that test your patience, your imagination, and your courage.</p>
+        <p></p>
         <p>But fear not. You will not travel alone. Guides, mentors, and the spirits of creativity will stand beside you, offering knowledge and inspiration. With every quest completed, your power grows: your hand becomes steadier, your eye becomes keener, and your voice becomes more confident.</p>
+        <p></p>
         <p>So step forward, brave artist. The gates of Artheim are open.</p>
         <p>Choose your path, accept your quest, and begin the journey that will transform you.</p>
+        <p></p>
         <p>The realm awaits your masterpiece.</p>
-        
-        <div id="characters-list" style="display: none;">
-          <!-- Characters will be added here by JavaScript -->
-        </div>
-        
         <button id="welcome-close">Enter</button>
-      </div>
     </div>
-  </div>
+    <div class="scroll-bottom"></div>
+   </div>
 </div>
 <!-- STUDENT SETUP POPUP ------------------------------------------------------------->
 <div id="student-setup-overlay" class="welcome-overlay" style="display:none;">
@@ -441,11 +437,4 @@
 </div>
 <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
