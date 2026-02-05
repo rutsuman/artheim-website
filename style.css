@@ -70,122 +70,87 @@ html, body {
 }
 
 /*=============================
-Dropdown MENU content - FIXED
+Dropdown MENU content - MINIMAL
 =============================*/
 
-/* Dropdown container at the top left */
+/* Minimal dropdown container */
 #dropdown-container {
     position: fixed;
     top: 10px;
     left: 10px;
     background-color: rgba(0,30,180,0.7);
-    padding: clamp(6px, 1.5vw, 10px);
+    padding: 6px 10px;
     border-radius: 5px;
     color: white;
     z-index: 3000;
-    display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
-    gap: clamp(3px, 0.8vw, 6px);
-    max-width: min(400px, 85vw); /* Limit width */
-    width: auto; /* Let it size based on content */
+    max-width: 180px; /* Very compact */
+    width: auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Make dropdowns compact on mobile */
-@media (max-width: 768px) {
-    #dropdown-container {
-        flex-direction: column;
-        width: auto;
-        max-width: 90vw;
-        right: auto;
-    }
-    
-    select {
-        width: 100%;
-        max-width: 180px;
-        font-size: 12px;
-        padding: 4px 6px;
-    }
+/* Stack dropdowns vertically with labels on same line */
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 11px;
 }
 
-/* Style for select elements */
+.dropdown-row label {
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
 select {
     background-color: #0718b18f;
     color: white;
     border: none;
-    padding: clamp(4px, 1vw, 5px) clamp(6px, 1.5vw, 8px);
-    margin: 0; /* Remove margins */
+    padding: 4px 6px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: clamp(11px, 1.5vw, 13px);
-    min-width: 150px;
-    max-width: 200px;
-    width: 100%;
+    font-size: 11px;
+    width: 100px; /* Fixed width */
+    flex-shrink: 0;
 }
 
-select:focus {
-    outline: none;
-}
-
-/* Search engine layout*/
 #quest-search-container {
-    margin-top: clamp(3px, 0.8vw, 6px);
-    margin-right: 0;
+    margin-top: 8px;
     width: 100%;
-    max-width: 200px;
 }
 
 #quest-search {
     width: 100%;
-    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
+    padding: 4px 6px;
     border-radius: 5px;
     border: none;
     background: rgb(0, 30, 180, 0.5);
     color: white;
-    font-size: clamp(11px, 1.5vw, 13px);
+    font-size: 11px;
+    font-size: 11px;
 }
 
-/* For very small screens */
-@media (max-width: 480px) {
+/* On desktop, make it slightly larger */
+@media (min-width: 769px) {
     #dropdown-container {
-        max-width: 85vw;
-        padding: 6px;
+        max-width: 220px;
+        padding: 8px 12px;
+    }
+    
+    .dropdown-row {
+        font-size: 12px;
     }
     
     select {
-        min-width: 120px;
-        max-width: 150px;
-        font-size: 11px;
+        width: 120px;
+        font-size: 12px;
+        padding: 5px 8px;
     }
     
-    #quest-search-container {
-        max-width: 150px;
+    #quest-search {
+        font-size: 12px;
+        padding: 5px 8px;
     }
-}
-
-/* Make sure dropdowns don't wrap on desktop */
-@media (min-width: 769px) {
-    #dropdown-container {
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        max-width: min(600px, 70vw);
-    }
-    
-    #quest-search-container {
-        margin-left: auto;
-        max-width: 180px;
-    }
-}
-
-#quest-search {
-    width: 100%;
-    padding: clamp(4px, 1vw, 6px) clamp(6px, 1.5vw, 8px);
-    border-radius: 5px;
-    border: none;
-    background: rgb(0, 30, 180, 0.5);
-    color: white;
-    font-size: clamp(12px, 1.5vw, 14px);
 }
 
 #quest-search-results {
@@ -1975,4 +1940,5 @@ select:focus {
         order: 3;
     }
 }
+
 
