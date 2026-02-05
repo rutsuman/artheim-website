@@ -490,47 +490,65 @@ select {
     align-items: center;
     background: rgba(0,0,0,0.7);
     z-index: 9999;
+    padding: 20px;
 }
 
-/* Scroll wrapper */
+/* Scroll wrapper - FIXED */
 .welcome-scroll {
     position: relative;
-    width: 85%;
-    max-width: min(900px, 95vw);
-    height: 80vh;
-    background: url('scroll.png') center/contain no-repeat;
+    width: 90%;
+    max-width: min(700px, 95vw);
+    height: auto;
+    min-height: 70vh;
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     will-change: transform, opacity;
-    padding: clamp(40px, 8vw, 80px) clamp(30px, 6vw, 60px);
     box-shadow: 0 25px 60px rgba(0,0,0,0.7);
     animation: float 5s ease-in-out infinite;
-    margin: clamp(10px, 2vw, 20px);
+    margin: 0;
+    overflow: hidden;
+    background: #f5e1b0; /* Fallback color if image fails */
 }
 
-/* Body content */
+/* Scroll image as a pseudo-element - THIS IS KEY */
+.welcome-scroll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('scroll.png') center/contain no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Body content - FIXED */
 .scroll-body {
-    width: 100%;
-    max-width: min(680px, 90vw);
+    width: 75%;
+    max-width: 550px;
     text-align: center;
-    color: #000000;
+    color: #3d2a1b;
     font-family: 'Georgia', serif;
     z-index: 2;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(14px, 1.8vw, 17px);
     max-height: 60vh;
     overflow-y: auto;
-    padding-right: clamp(5px, 1vw, 10px);
+    padding: 40px 20px;
+    margin: 40px auto;
+    position: relative;
 }
 
-/* Scrollbar styling */
+/* Remove the padding-right that was causing issues */
 .scroll-body::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 .scroll-body::-webkit-scrollbar-thumb {
-    background: rgba(125, 84, 35, 0.705);
+    background: rgba(125, 84, 35, 0.5);
     border-radius: 10px;
 }
 
@@ -542,47 +560,130 @@ select {
 }
 
 /* Text */
-.welcome-scroll h1 {
-    font-size: clamp(20px, 4vw, 32px);
-    margin-bottom: clamp(10px, 2vw, 20px);
+.scroll-body h1 {
+    font-size: clamp(22px, 4vw, 28px);
+    margin-bottom: 20px;
+    color: #5b3c1c;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.welcome-scroll p {
-    font-size: clamp(12px, 1.8vw, 16px);
+.scroll-body p {
+    font-size: clamp(14px, 1.8vw, 16px);
     line-height: 1.6;
-    margin-bottom: clamp(10px, 2vw, 20px);
+    margin-bottom: 20px;
+    color: #4a351f;
 }
 
 /* Button */
 #welcome-close {
-    padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 28px);
-    font-size: clamp(14px, 2vw, 18px);
+    padding: 10px 25px;
+    font-size: 16px;
     border: 2px solid #7b5a2b;
     background: #f0d9a7;
     cursor: pointer;
     border-radius: 10px;
+    color: #5b3c1c;
+    font-weight: bold;
+    margin-top: 10px;
+    z-index: 3;
+    position: relative;
 }
 
-/*character choosing*/
+#welcome-close:hover {
+    background: #e6c993;
+    transform: translateY(-2px);
+}
+
+/* Character choosing - FIXED */
 #characters-list {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(5px, 1vw, 10px);
-    margin-top: clamp(10px, 2vw, 15px);
+    gap: 10px;
+    margin-top: 20px;
     justify-content: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 3;
+    position: relative;
 }
 
 .character-card {
     cursor: pointer;
-    border: 2px solid rgba(255,255,255,0.3);
-    padding: clamp(3px, 1vw, 6px);
+    border: 2px solid rgba(139, 69, 19, 0.3);
+    padding: 8px;
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.character-card:hover {
+    border-color: #8b4513;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .character-card img {
-    width: clamp(60px, 15vw, 90px);
-    height: clamp(60px, 15vw, 90px);
+    width: 70px;
+    height: 70px;
     object-fit: contain;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+    .welcome-scroll {
+        width: 95%;
+        max-width: 95vw;
+        min-height: 60vh;
+        max-height: 80vh;
+    }
+    
+    .scroll-body {
+        width: 85%;
+        max-width: 85vw;
+        padding: 30px 15px;
+        margin: 30px auto;
+        max-height: 50vh;
+    }
+    
+    .character-card img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #characters-list {
+        gap: 8px;
+        max-width: 90%;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .welcome-scroll {
+        width: 98%;
+        max-height: 75vh;
+    }
+    
+    .scroll-body {
+        width: 90%;
+        padding: 25px 10px;
+        margin: 25px auto;
+        font-size: 14px;
+    }
+    
+    .scroll-body h1 {
+        font-size: 20px;
+    }
+    
+    .character-card img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #welcome-close {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
 }
 
 /* ==========================
@@ -1939,6 +2040,7 @@ select {
         order: 3;
     }
 }
+
 
 
 
